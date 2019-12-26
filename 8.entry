@@ -1,0 +1,10 @@
+name="flashplugin-installer"
+package_name="flashplugin-installer"
+description="flashplugin-installer"
+run_preparing=false
+install(){
+apt install ${package_name}
+}
+uninstall(){
+apt purge ${package_name} && apt autoremove --purge
+}

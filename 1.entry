@@ -1,0 +1,10 @@
+name="htop"
+package_name="htop"
+description="CUIのシステムモニター"
+run_preparing=false
+install(){
+apt install ${package_name}
+}
+uninstall(){
+apt purge ${package_name} && apt autoremove --purge
+}

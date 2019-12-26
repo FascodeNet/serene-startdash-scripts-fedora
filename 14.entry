@@ -1,0 +1,10 @@
+name="vim"
+package_name="vim"
+description="CUIテキストエディター"
+run_preparing=false
+install(){
+apt install ${package_name}
+}
+uninstall(){
+apt purge ${package_name} && apt autoremove --purge
+}

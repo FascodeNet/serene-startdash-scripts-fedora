@@ -1,0 +1,10 @@
+name="ffmpeg"
+package_name="ffmpeg"
+description="ffmpeg動画ファイルの変換を行うことができるソフトウェア"
+run_preparing=false
+install(){
+apt install ${package_name}
+}
+uninstall(){
+apt purge ${package_name} && apt autoremove --purge
+}

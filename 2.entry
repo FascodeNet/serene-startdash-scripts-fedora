@@ -1,0 +1,10 @@
+name="blueman"
+package_name="blueman"
+description="Bluetoothを扱うためのソフトウェア"
+run_preparing=false
+install(){
+apt install ${package_name}
+}
+uninstall(){
+apt purge ${package_name} && apt autoremove --purge
+}

@@ -1,0 +1,10 @@
+name="font-manager"
+package_name="font-manager"
+description="フォント系管理をGUIソフトウェア"
+run_preparing=false
+install(){
+apt install ${package_name}
+}
+uninstall(){
+apt purge ${package_name} && apt autoremove --purge
+}

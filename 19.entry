@@ -1,0 +1,18 @@
+name="atom"
+package_name="atom"
+description="コードエディタ"
+run_preparing=false
+install(){
+SCRIPT_DIR=$(cd $(dirname $0); pwd)
+cd $SCRIPT_DIR
+rm -rf /tmp/atominstall
+mkdir /tmp/atominstall
+cd /tmp/atominstall
+wget https://atom-installer.github.com/v1.41.0/atom-amd64.deb
+sudo apt -y install ./atom-amd64.deb
+rm -rf /tmp/atominstall
+apt install ${package_name}
+}
+uninstall(){
+apt purge ${package_name} && apt autoremove --purge
+}

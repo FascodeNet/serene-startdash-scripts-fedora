@@ -1,0 +1,10 @@
+name="gnome-system-monitor"
+package_name="gnome-system-monitor"
+description="GUIシステムモニター"
+run_preparing=false
+install(){
+apt install ${package_name}
+}
+uninstall(){
+apt purge ${package_name} && apt autoremove --purge
+}

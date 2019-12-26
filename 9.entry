@@ -1,0 +1,17 @@
+name="VisualStudioCode"
+package_name="code"
+description="コードエディタ"
+run_preparing=false
+install(){
+SCRIPT_DIR=$(cd $(dirname $0); pwd)
+cd $SCRIPT_DIR
+rm -rf /tmp/vscodeinstall
+mkdir /tmp/vscodeinstall
+cd /tmp/vscodeinstall
+wget https://go.microsoft.com/fwlink/?LinkID=760868 -O vscode.deb
+sudo apt -y install ./vscode.deb
+rm -rf /tmp/vscodeinstall
+}
+uninstall(){
+apt purge ${package_name} && apt autoremove --purge
+}

@@ -1,0 +1,13 @@
+name="inkscape"
+package_name="inkscape"
+description="ドロー系画像編集ソフト"
+run_preparing=false
+install(){
+add-apt-repository ppa:inkscape.dev/stable -y
+apt update -y
+apt install ${package_name}
+}
+uninstall(){
+add-apt-repository --remove ppa:inkscape.dev/stable -y
+apt purge ${package_name} && apt autoremove --purge
+}
