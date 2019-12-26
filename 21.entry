@@ -1,0 +1,10 @@
+name="Plank"
+package_name="plank"
+description="Macのようなドックランチャー"
+run_preparing=false
+install(){
+apt install ${package_name}
+}
+uninstall(){
+apt purge ${package_name} && apt autoremove --purge
+}
