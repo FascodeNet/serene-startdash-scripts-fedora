@@ -6,5 +6,6 @@ install(){
 apt install ${package_name}
 }
 uninstall(){
-apt purge ${package_name} && apt autoremove --purge
+apt purge -y ${package_name}
+apt autoremove --purge -y
 }

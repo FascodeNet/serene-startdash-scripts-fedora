@@ -8,6 +8,7 @@ apt update -y
 apt install ${package_name}
 }
 uninstall(){
-add-apt-repository --remove ppa:otto-kesselgulasch/gimp -y
-apt purge ${package_name} && apt autoremove --purge
+    add-apt-repository --remove ppa:otto-kesselgulasch/gimp -y
+    apt purge ${package_name} -y
+    apt autoremove --purge -y
 }

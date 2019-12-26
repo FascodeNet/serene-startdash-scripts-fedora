@@ -6,8 +6,9 @@ install(){
 wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
 add-apt-repository 'deb https://typora.io/linux ./' -y
 apt update -y
-apt install ${package_name}
+apt install ${package_name} -y
 }
 uninstall(){
-apt purge ${package_name} && apt autoremove --purge
+    apt purge ${package_name} -y
+    apt autoremove --purge -y
 }

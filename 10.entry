@@ -13,5 +13,5 @@ sudo apt -y install ./google-chrome-stable_current_amd64.deb
 rm -rf /tmp/chromeinstall
 }
 uninstall(){
-apt purge ${package_name} && apt autoremove --purge
+apt purge ${package_name} -y && apt autoremove --purge -y
 }
