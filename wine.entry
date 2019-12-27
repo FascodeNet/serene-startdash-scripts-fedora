@@ -11,12 +11,12 @@ install(){
     wget -nc https://dl.winehq.org/wine-builds/winehq.key
     sudo apt-key add winehq.key
     sudo apt-add-repository -y 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
-    sudo apt -y install --install-recommends winehq-stable
+    sudo apt-get -y install --install-recommends winehq-stable
     rm -rf /tmp/wineinstall
 }
 uninstall(){
-    sudo apt -y purge ${package_name}
-    sudo apt -y autoremove --purge
+    sudo apt-get -y purge ${package_name}
+    sudo apt-get -y autoremove --purge
     sudo apt-add-repository -y --remove 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
     SCRIPT_DIR=$(cd $(dirname $0); pwd)
     cd $SCRIPT_DIR

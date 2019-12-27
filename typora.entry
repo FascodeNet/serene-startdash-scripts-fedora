@@ -5,10 +5,10 @@ run_preparing=false
 install(){
 wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
 add-apt-repository 'deb https://typora.io/linux ./' -y
-apt update -y
-apt install ${package_name} -y
+apt-get update -y
+apt-get install ${package_name} -y
 }
 uninstall(){
-    apt purge ${package_name} -y
-    apt autoremove --purge -y
+    apt-get purge ${package_name} -y
+    apt-get autoremove --purge -y
 }

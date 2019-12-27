@@ -3,9 +3,9 @@ package_name="plank"
 description="Macのようなドックランチャー"
 run_preparing=false
 install(){
-apt install ${package_name}
+    apt-get install ${package_name}
 }
 uninstall(){
-apt purge -y ${package_name}
-apt autoremove --purge -y
+    apt-get purge -y ${package_name}
+    apt-get autoremove --purge -y
 }

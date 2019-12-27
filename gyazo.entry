@@ -11,13 +11,13 @@ install(){
     cd /tmp/gyazoinstall
     wget https://packagecloud.io/gyazo/gyazo-for-linux/gpgkey
     apt-key add gpgkey -y
-    apt update
-    apt -y install gyazo
+    apt-get update
+    apt-get -y install gyazo
     rm -rf /tmp/gyazoinstall
 }
 uninstall(){
-    apt -y purge gyazo
-    apt -y autoremove --purge
+    apt-get -y purge gyazo
+    apt-get -y autoremove --purge
     rm -f /etc/apt/sources.list.d/gyazo_gyazo-for-linux.list
     SCRIPT_DIR=$(cd $(dirname $0); pwd)
     cd $SCRIPT_DIR

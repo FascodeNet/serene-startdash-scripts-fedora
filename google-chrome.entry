@@ -9,9 +9,10 @@ rm -rf /tmp/chromeinstall
 mkdir /tmp/chromeinstall
 cd /tmp/chromeinstall
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt -y install ./google-chrome-stable_current_amd64.deb
+sudo apt-get -y install ./google-chrome-stable_current_amd64.deb
 rm -rf /tmp/chromeinstall
 }
 uninstall(){
-apt purge ${package_name} -y && apt autoremove --purge -y
+apt-get purge ${package_name} -y
+apt-get autoremove --purge -y
 }

@@ -4,11 +4,11 @@ description="ペイント系画像編集ソフトウェア"
 run_preparing=false
 install(){
 add-apt-repository ppa:otto-kesselgulasch/gimp -y
-apt update -y
-apt install ${package_name}
+apt-get update -y
+apt-get install ${package_name}
 }
 uninstall(){
     add-apt-repository --remove ppa:otto-kesselgulasch/gimp -y
-    apt purge ${package_name} -y
-    apt autoremove --purge -y
+    apt-get purge ${package_name} -y
+    apt-get autoremove --purge -y
 }
