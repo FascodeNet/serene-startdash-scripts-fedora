@@ -1,0 +1,11 @@
+name="Guake-Terminal"
+package_name="guake"
+description="スタイリッシュなターミナルエミュレータ"
+run_preparing=false
+install(){
+    apt install -y ${package_name}
+}
+uninstall(){
+    apt purge ${package_name} -y
+    apt autoremove --purge -y
+}
