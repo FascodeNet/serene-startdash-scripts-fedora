@@ -1,0 +1,14 @@
+name="Minecraft"
+package_name="minecraft-launcher"
+description=
+run_preparing=false
+
+install () {
+    curl -sL -o /tmp/minecraft.deb https://launcher.mojang.com/download/Minecraft.deb
+    apt-get install -y ${package_name}
+    rm -f /tmp/minecraft.deb
+}
+uninstall () {
+    apt-get purge ${package_name} -y
+    apt-get autoremove --purge -y
+}
