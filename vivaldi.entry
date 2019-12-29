@@ -1,0 +1,17 @@
+name=Vivaldi
+package_name="vivaldi-stable"
+description="パワーユーザーを念頭に置いて作られた高度なブラウザ。"
+run_preparing=false
+
+
+install(){
+    wget -qO- https://repo.vivaldi.com/archive/linux_signing_key.pub | sudo apt-key add -
+    add-apt-repository 'deb https://repo.vivaldi.com/archive/deb/ stable main' -y
+    apt-get update -y
+    apt-get install -y ${package_name}
+}
+uninstall(){
+    add-apt-repository --remove 'deb https://repo.vivaldi.com/archive/deb/ stable main' -y
+    apt-get purge -y ${package_name}
+    apt-get autoremove --purge -y
+}
