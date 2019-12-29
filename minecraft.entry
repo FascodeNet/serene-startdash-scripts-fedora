@@ -1,6 +1,6 @@
 name="Minecraft"
 package_name="minecraft-launcher"
-description=
+description="ブロックを設置して、冒険に行くゲーム"
 run_preparing=false
 
 install () {
