@@ -1,0 +1,13 @@
+name=Discord
+package_name="discord"
+description="ゲーマー向け音声テキストチャットアプリ。"
+run_preparing=false
+install () {
+    curl -sL -o /tmp/discord.deb https://discordapp.com/api/download?platform=linux&format=deb
+    apt-get install -y /tmp/discord.deb
+    rm -f /tmp/discord.deb
+}
+uninstall () {
+    apt-get purge ${package_name} -y
+    apt-get autoremove --purge -y
+}
