@@ -1,5 +1,5 @@
 name="chromium"
-package_name="chromium"
+package_name="chromium-browser"
 description="SereneLinuxのデフォルトブラウザー"
 run_preparing=false
 install(){
