@@ -5,7 +5,7 @@ run_preparing=false
 install () {
     apt-get install gdebi
     curl -sL -o /tmp/discord.deb 'https://discordapp.com/api/download?platform=linux&format=deb'
-    gdebi /tmp/discord.deb
+    apt-get -y install  /tmp/discord.deb
     rm -f /tmp/discord.deb
 }
 uninstall () {

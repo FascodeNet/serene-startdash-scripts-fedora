@@ -5,7 +5,7 @@ run_preparing=false
 
 install () {
     curl -sL -o /tmp/minecraft.deb https://launcher.mojang.com/download/Minecraft.deb
-    gdebi /tmp/minecraft.deb
+    apt-get -y install /tmp/minecraft.deb
     rm -f /tmp/minecraft.deb
 }
 uninstall () {
