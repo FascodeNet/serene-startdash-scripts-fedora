@@ -2,6 +2,8 @@ name="winetricks"
 package_name="winetricks"
 description="winetricksWindowsエミュレーターソフトウェア"
 run_preparing=false
+install_check=false
+
 install(){
     rm -rf /tmp/winetricksinstall
     mkdir /tmp/winetricksinstall
