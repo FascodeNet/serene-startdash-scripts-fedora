@@ -9,7 +9,7 @@ install(){
     mkdir /tmp/wineinstall
     cd /tmp/wineinstall
     wget -nc "https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/Release.key"
-    sudo apt-key add winehq.key
+    sudo apt-key add Release.key
     sudo apt-add-repository 'deb　https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/ ./'
     sudo apt-get -y install --install-recommends winehq-stable
     rm -rf /tmp/wineinstall
