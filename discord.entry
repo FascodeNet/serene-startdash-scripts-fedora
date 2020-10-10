@@ -3,12 +3,8 @@ package_name="discord"
 description="ゲーマー向け音声テキストチャットアプリ。"
 run_preparing=false
 install () {
-    apt-get install gdebi
-    curl -sL -o /tmp/discord.deb 'https://discordapp.com/api/download?platform=linux&format=deb'
-    apt-get -y install  /tmp/discord.deb
-    rm -f /tmp/discord.deb
+    dnf install -y discord
 }
 uninstall () {
-    apt-get purge ${package_name} -y
-    apt-get autoremove --purge -y
+    dnf remove -y discord
 }

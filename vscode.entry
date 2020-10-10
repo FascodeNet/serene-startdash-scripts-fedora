@@ -3,16 +3,11 @@ package_name="code"
 description="コードエディタ"
 run_preparing=false
 install(){
-SCRIPT_DIR=$(cd $(dirname $0); pwd)
-cd $SCRIPT_DIR
-rm -rf /tmp/vscodeinstall
-mkdir /tmp/vscodeinstall
-cd /tmp/vscodeinstall
-wget https://go.microsoft.com/fwlink/?LinkID=760868 -O vscode.deb
-sudo apt-get -y install ./vscode.deb
-rm -rf /tmp/vscodeinstall
+    rpm --import https://packages.microsoft.com/keys/microsoft.asc
+    sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+    dnf check-update
+    dnf install code
 }
 uninstall(){
-    apt-get purge -y ${package_name}
-    apt-get autoremove -y --purge
+    dnf remove -y code
 }

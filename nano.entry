@@ -3,9 +3,9 @@ package_name="nano"
 description="CUIテキストエディター"
 run_preparing=false
 install(){
-    apt-get install -y ${package_name}
+    dnf install -y ${package_name}
 }
 uninstall(){
-    apt-get purge ${package_name} -y
+    dnf remove -y ${package_name} 
     apt-get autoremove --purge -y
 }

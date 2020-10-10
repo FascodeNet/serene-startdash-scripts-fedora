@@ -3,12 +3,8 @@ package_name="inkscape"
 description="ドロー系画像編集ソフト"
 run_preparing=false
 install(){
-    add-apt-repository ppa:inkscape.dev/stable -y
-    apt-get update -y
-    apt-get install ${package_name}
+    dnf install -y inkscape
 }
 uninstall(){
-    add-apt-repository --remove ppa:inkscape.dev/stable -y
-    apt-get purge ${package_name} -y
-    apt-get autoremove --purge -y
+    dnf remove -y inkscape
 }
